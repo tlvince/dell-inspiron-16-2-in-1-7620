@@ -35,9 +35,3 @@ Device notes and configuration under Linux for the [Inspiron 16 2-in-1 7620](htt
 - both USB C ports are on the same side - minor annoyance depending on desk set up
 - shame active stylus not included
 - quieter fan than Framework
-
-## License
-
-[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
-
-To the extent possible under law, [Tom Vincent](https://tlvince.com) has waived all copyright and related or neighbouring rights to this work.
