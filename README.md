@@ -10,9 +10,8 @@ Device notes and configuration under Linux for the [Inspiron 16 2-in-1 7620](htt
 - Samsung SDC4164 4k OLED 3840x2400 400 nits
 - 87Wh battery
 - HDMI 1.4 only
-
-- https://www.notebookcheck.net/Dell-Inspiron-16-7620-2-in-1-convertible-review-Mylar-and-aluminum-chassis.628030.0.html
-- https://linux-hardware.org/?probe=7ad1831ce9
+- [Hardware for Linux probe](https://linux-hardware.org/?probe=3e34521c45)
+- [Notebookcheck review](https://www.notebookcheck.net/Dell-Inspiron-16-7620-2-in-1-convertible-review-Mylar-and-aluminum-chassis.628030.0.html)
 
 ## Notes
 
