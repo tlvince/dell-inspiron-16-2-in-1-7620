@@ -34,3 +34,12 @@ Device notes and configuration under Linux for the [Inspiron 16 2-in-1 7620](htt
 - both USB C ports are on the same side - minor annoyance depending on desk set up
 - shame active stylus not included
 - quieter fan than Framework
+- audio requires `sof-firmware`
+- OLED grey uniformity issue
+  - http://color.aurlien.net/#111111
+- [getUserMedia / getDisplayMedia Test Page](https://mozilla.github.io/webrtc-landing/gum_test.html)
+
+## Sleep
+
+- S0ix supported, reaches S0i2.0
+- no "legacy" S3 deep sleep option in BIOS
