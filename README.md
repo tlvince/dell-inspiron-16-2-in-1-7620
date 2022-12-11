@@ -2,6 +2,8 @@
 
 Device notes and configuration under Linux for the [Inspiron 16 2-in-1 7620](https://www.dell.com/en-uk/shop/laptops/inspiron-16-2-in-1-laptop/spd/inspiron-16-7620-2-in-1-laptop/cn76201sc) 4K OLED variant.
 
+Everything works of the box in Linux v6.0 (including touchscreen, rotation, fingerprint scanner, SD-card reader), with the exception of the front firing speakers (a [patch](https://github.com/tiwai/sound/commit/2912cdda734d9136615ed05636d9fcbca2a7a3c5) has been merged and is expected to ship in v6.2).
+
 ## Specs
 
 - [Intel i7-1260P](https://ark.intel.com/content/www/us/en/ark/products/226254/intel-core-i71260p-processor-18m-cache-up-to-4-70-ghz.html) (Alder Lake)
@@ -13,33 +15,155 @@ Device notes and configuration under Linux for the [Inspiron 16 2-in-1 7620](htt
 - [Hardware for Linux probe](https://linux-hardware.org/?probe=3e34521c45)
 - [Notebookcheck review](https://www.notebookcheck.net/Dell-Inspiron-16-7620-2-in-1-convertible-review-Mylar-and-aluminum-chassis.628030.0.html)
 
-## Notes
+## Opinion
 
-- clone of MacBook Pro 16 design wise, marginally heavier, slightly thicker
-- poor tinny speakers compared to MacBook
-- Windows front firing speaker mixer bug
-- feature-full BIOS
-- NVMe set in RAID mode on the controller by default for all modern Dells regardless of by number of m2 slots
+- reminiscent of MacBook Pro 16 design wise, marginally heavier, slightly thicker
+- acceptable speaker volume, poor bass response
+- portability and tablet mode hampered by the size and weight
+- touchpad mylar layer prevents capacitive grounding "vibration"
+- both USB C ports are on the same side - minor annoyance depending on desk set up
+- no stylus included (shame)
+- anecdotally quieter fan than Framework
+- excellent OLED display, but unfortunately this unit has a grey uniformity issue, visible in a dark room with dark grey backgrounds, e.g. hex [#111111](http://color.aurlien.net/#111111) (coincidentally, the default for the [foot terminal](https://codeberg.org/dnkl/foot)) and [#0f0f0f](http://color.aurlien.net/#0f0f0f)
+  - common downside for OLED - better to use a pure black background anyway for power saving
+
+## BIOS
+
+- GUI-based UEFI
+- _can_ set custom charge limit
+- can’t disable dGPU
+- partial Linux support via `libsmbios`
+- NVMe RAID mode set by default for all modern Dells regardless of by number of m2 slots
   - [Intel Rapid Storage Technology](https://en.m.wikipedia.org/wiki/Intel_Rapid_Storage_Technology)
   - aka [FakeRAID](https://wiki.archlinux.org/title/RAID#Implementation)
   - requires `vmd` kernel module
   - `vmd` can cause [high power usage](<https://wiki.archlinux.org/title/Dell_XPS_13_Plus_(9320)#Cannot_enter_S0ix_causing_high_power_usage>)
   - [switching from RAID to AHCI](https://gist.github.com/chenxiaolong/4beec93c464639a19ad82eeccc828c63#switching-from-raid-to-ahci)
-- everything working out of the box in Linux (including touchscreen, rotation, fingerprint) except the front firing speakers (fixed in next kernel release)
-- can set custom charge limit in BIOS
-- can’t disable dGPU in BIOS
-- Windows defaults to 2.5x scaling
-- portability and tablet mode hampered by the size and weight
-- touchpad mylar layer prevents capacitive grounding "vibration"
-- both USB C ports are on the same side - minor annoyance depending on desk set up
-- shame active stylus not included
-- quieter fan than Framework
+- no "legacy" S3 deep sleep option
+
+## Software
+
 - audio requires `sof-firmware`
-- OLED grey uniformity issue
-  - http://color.aurlien.net/#111111
-- [getUserMedia / getDisplayMedia Test Page](https://mozilla.github.io/webrtc-landing/gum_test.html)
+- [getUserMedia / getDisplayMedia Test Page](https://mozilla.github.io/webrtc-landing/gum_test.html) - useful for testing webcam/screensharing
+- av1 decoding broken in [Firefox v107](https://bugzilla.mozilla.org/show_bug.cgi?id=1793507)
+  - fixed in v108, workaround: `media.ffvpx.enabled: false`
 
 ## Sleep
 
-- S0ix supported, reaches S0i2.0
-- no "legacy" S3 deep sleep option in BIOS
+- S3 sleep unsupported
+  - S0ix supported, reaches S0i2.0
+
+## NVIDIA
+
+- Full [RTD3 Power Management](https://download.nvidia.com/XFree86/Linux-x86_64/525.60.11/README/dynamicpowermanagement.html) supported
+  - [RTD3 configuration](<https://wiki.archlinux.org/title/PRIME#PCI-Express_Runtime_D3_(RTD3)_Power_Management>)
+- CUDA supported
+
+## GPU Power Benchmarks
+
+Test environment:
+
+- idle
+- 30% brightness
+- sway
+- Firefox open
+- WiFi connected
+- Bluetooth enabled
+- tlp, thermald daemons running (default configs)
+
+Verify [PCI state](https://docs.kernel.org/power/pci.html#native-pci-power-management) via:
+
+```sh
+cat /sys/class/drm/card1/device/power_state
+```
+
+| Driver        | Power Consumption | PCI state |
+| ------------- | ----------------- | --------- |
+| nvidia        | 6.7W              | D3cold    |
+| nvidia-open   | 10.8W             | D0        |
+| nouveau       | 6.7W              | D3cold    |
+| (blacklisted) | 6.73W             | -         |
+
+### nvidia
+
+- [requires `ibt=off`](https://bugs.archlinux.org/task/74886) to boot
+- `sway --unsupported-gpu`
+
+### nvidia-open
+
+- PCI utilisation: 100%
+  - [power management unimplemented](https://github.com/NVIDIA/open-gpu-kernel-modules/issues/314)
+- ~7W in vconsole
+  - ~3W for NVIDIA alone
+
+### blacklisted
+
+- using [uDev rules](https://wiki.archlinux.org/title/Hybrid_graphics#Using_udev_rules)
+- not in the PCI tree
+
+## Near-idle benchmarks
+
+Testing near-idle performance via two open foot terminals, one running `powerstat` with the following flags:
+
+```sh
+powerstat -d 0 -c -H 1 480
+```
+
+... the other running a bash one-liner:
+
+```sh
+while [ 1 ]; echo 'foo'; do sleep 1; done
+```
+
+Test environment:
+
+- idle
+- Wayland only (XWayland disabled)
+- 40% brightness
+- WiFi connected
+- tlp, thermald daemons running (default configs)
+
+Comparing GNOME and sway with roughly equivalent helpers to provide a basic "desktop environment".
+
+### sway (no bar)
+
+- sway without a bar (`swaybar` not running)
+- `swayidle`
+- `swaybg`
+- `gammastep`
+
+| State   | C10%   | Power (W) |
+| ------- | ------ | --------- |
+| sleep 1 | 99.63% | 6.08      |
+
+### sway (waybar)
+
+- sway
+- `waybar` with modules:
+  - sway/workspaces
+  - sway/mode
+  - sway/window
+  - network
+  - battery
+  - tray
+  - clock#date
+- `swayidle`
+- `swaybg`
+- `gammastep`
+
+| State   | C10%   | Power (W) |
+| ------- | ------ | --------- |
+| sleep 1 | 98.32% | 6.81      |
+
+### GNOME
+
+- `gnome-shell --no-x11`
+- `gdm3`
+- `gnome-settings-daemon`
+
+| State      | C10%   | Power (W) |
+| ---------- | ------ | --------- |
+| idle       | 99.69% | 5.37      |
+| sleep 1    | 99.56% | 5.48      |
+| sleep 0.1  | 98.64% | 6.51      |
+| sleep 0.01 | 90.6%  | 9.36      |
