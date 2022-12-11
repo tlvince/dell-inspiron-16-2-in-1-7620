@@ -1,0 +1,4 @@
+# sudo ./mei-amt-check 
+Error: Management Engine refused connection. This probably means you don't have AMT
+# sudo ./intelmetool -m
+Can't find ME PCI device

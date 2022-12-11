@@ -1,0 +1,24 @@
+# ~2308
+
+--- TLP 1.5.0 --------------------------------------------
+
++++ Battery Care
+Plugin: generic
+Supported features: none available
+
++++ Battery Status: BAT0
+/sys/class/power_supply/BAT0/manufacturer                   = BYD
+/sys/class/power_supply/BAT0/model_name                     = DELL NR6MH23
+/sys/class/power_supply/BAT0/cycle_count                    =      0 (or not supported)
+/sys/class/power_supply/BAT0/charge_full_design             =   7632 [mAh]
+/sys/class/power_supply/BAT0/charge_full                    =   7632 [mAh]
+/sys/class/power_supply/BAT0/charge_now                     =   5387 [mAh]
+/sys/class/power_supply/BAT0/current_now                    =      1 [mA]
+/sys/class/power_supply/BAT0/status                         = Not charging
+
+/sys/class/power_supply/BAT0/charge_control_start_threshold = (not available) 
+/sys/class/power_supply/BAT0/charge_control_end_threshold   = (not available) 
+
+Charge                                                      =   70.6 [%]
+Capacity                                                    =  100.0 [%]
+

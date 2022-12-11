@@ -1,0 +1,72 @@
+inspiron% sudo ./s0ix-selftest-tool.sh -s
+
+---Check S2idle path S0ix Residency---:
+
+The system OS Kernel version is:
+Linux inspiron 6.0.10-arch2-1 #2 SMP PREEMPT_DYNAMIC Thu, 01 Dec 2022 13:23:25 +0000 x86_64 GNU/Linux
+
+---Check whether your system supports S0ix or not---:
+
+Low Power S0 Idle is:1
+Your system supports low power S0 idle capability.
+
+
+
+---Check whether intel_pmc_core sysfs files exit---:
+
+The pmc_core debug sysfs files are OK on your system.
+
+
+
+---Judge PC10, S0ix residency available status---:
+
+Test system supports S0ix.y substate
+
+S0ix substate before S2idle:
+  S0i2.0
+
+S0ix substate residency before S2idle:
+  0
+
+Turbostat output: 
+14.861899 sec
+CPU%c1	CPU%c6	CPU%c7	Pkg%pc2	Pkg%pc3	Pkg%pc6	Pkg%pc7	Pkg%pc8	Pkg%pc9	Pk%pc10	SYS%LPI
+0.93	66.11	32.60	4.35	0.27	0.12	0.00	0.63	0.00	89.95	89.77
+2.11	0.02	96.87	4.35	0.27	0.12	0.00	0.63	0.00	89.95	89.76
+2.06
+1.37	0.07	97.50
+2.09
+0.94	0.04	98.10
+1.52
+0.64	0.01	98.74
+0.93
+0.49	98.96	0.00
+0.51	98.92	0.00
+0.31	99.18	0.00
+0.30	99.21	0.00
+0.37	99.23	0.00
+0.27	99.37	0.00
+0.65	98.96	0.00
+0.38	99.29	0.00
+
+CPU Core C7 residency after S2idle is: 32.60
+GFX RC6 residency after S2idle is: 
+CPU Package C-state 2 residency after S2idle is: 4.35
+CPU Package C-state 3 residency after S2idle is: 0.27
+CPU Package C-state 8 residency after S2idle is: 0.63
+CPU Package C-state 9 residency after S2idle is: 0.00
+CPU Package C-state 10 residency after S2idle is: 89.95
+S0ix residency after S2idle is: 89.77
+
+S0ix substate after S2idle:
+  S0i2.0
+
+S0ix substate residency after S2idle:
+  13336216
+
+S0ix substates residency delta value: S0i2.0 13336216
+
+Congratulations! Your system achieved the deepest S0ix substate!           
+Here is the S0ix substates status: 
+Substate   Residency      
+S0i2.0     13336216

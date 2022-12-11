@@ -1,0 +1,3 @@
+# MAKEFLAGS="-j16", tlp AC mode
+==> Finished making: linux 6.0.10.arch2-1 (Thu 01 Dec 2022 00:30:16 GMT)
+makepkg -s  24179.37s user 2723.10s system 1491% cpu 30:03.33 total
