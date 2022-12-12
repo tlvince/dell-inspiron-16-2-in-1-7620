@@ -171,3 +171,8 @@ Comparing GNOME and sway with roughly equivalent helpers to provide a basic "des
 | sleep 1    | 99.56% | 5.48      |
 | sleep 0.1  | 98.64% | 6.51      |
 | sleep 0.01 | 90.6%  | 9.36      |
+
+## Links
+
+- [lakotamm/Dell-Inspiron-16-Plus-7620-Linux-Config](https://github.com/lakotamm/Dell-Inspiron-16-Plus-7620-Linux-Config)
+- [lhl/linuxlaptops](https://github.com/lhl/linuxlaptops)
