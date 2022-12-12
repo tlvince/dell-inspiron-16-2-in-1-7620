@@ -175,4 +175,5 @@ Comparing GNOME and sway with roughly equivalent helpers to provide a basic "des
 ## Links
 
 - [lakotamm/Dell-Inspiron-16-Plus-7620-Linux-Config](https://github.com/lakotamm/Dell-Inspiron-16-Plus-7620-Linux-Config)
+  - [lakotamm /r/dell discussion](https://old.reddit.com/r/Dell/comments/w30svq/freshly_new_inspiron_16_plus_7620_with_i7_and_rtx/)
 - [lhl/linuxlaptops](https://github.com/lhl/linuxlaptops)
