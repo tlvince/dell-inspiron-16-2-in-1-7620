@@ -9,14 +9,16 @@ Everything works of the box in Linux v6.0 (including touchscreen, rotation, fing
 - [Intel i7-1260P](https://ark.intel.com/content/www/us/en/ark/products/226254/intel-core-i71260p-processor-18m-cache-up-to-4-70-ghz.html) (Alder Lake)
 - NVIDIA MX550 (Turing)
 - Samsung PM991a SSD
-- Samsung SDC4164 4k OLED 3840x2400 400 nits
+- Samsung SDC4164 4k OLED 3840x2400 400 nits 283ppi
 - 87Wh battery
+- 2x SODIMM
+- 1x M.2 NVMe
 - HDMI 1.4 only
 - [Hardware for Linux probe](https://linux-hardware.org/?probe=3e34521c45)
-- [Notebookcheck review](https://www.notebookcheck.net/Dell-Inspiron-16-7620-2-in-1-convertible-review-Mylar-and-aluminum-chassis.628030.0.html)
 
 ## Opinion
 
+- [Notebookcheck review](https://www.notebookcheck.net/Dell-Inspiron-16-7620-2-in-1-convertible-review-Mylar-and-aluminum-chassis.628030.0.html)
 - reminiscent of MacBook Pro 16 design wise, marginally heavier, slightly thicker
 - acceptable speaker volume, poor bass response
 - portability and tablet mode hampered by the size and weight
@@ -24,8 +26,11 @@ Everything works of the box in Linux v6.0 (including touchscreen, rotation, fing
 - both USB C ports are on the same side - minor annoyance depending on desk set up
 - no stylus included (shame)
 - anecdotally quieter fan than Framework
-- excellent OLED display, but unfortunately this unit has a grey uniformity issue, visible in a dark room with dark grey backgrounds, e.g. hex [#111111](http://color.aurlien.net/#111111) (coincidentally, the default for the [foot terminal](https://codeberg.org/dnkl/foot)) and [#0f0f0f](http://color.aurlien.net/#0f0f0f)
-  - common downside for OLED - better to use a pure black background anyway for power saving
+- excellent OLED display with 283ppi - [ideal for HiDPI](https://github.com/cassidyjames/dippi/blob/0703424c3d541f581bd83d519da365cfd8566dda/dpi.md), running at 2x (integer) scaling
+  - unfortunately this unit has grey uniformity issues
+  - only visible in a dark room with dark grey backgrounds, e.g. hex [#111111](http://color.aurlien.net/#111111) (coincidentally, the default for the [foot terminal](https://codeberg.org/dnkl/foot)) and [#0f0f0f](http://color.aurlien.net/#0f0f0f)
+  - common downside for OLED
+  - best to use a pure black background for power saving
 
 ## BIOS
 
@@ -52,6 +57,7 @@ Everything works of the box in Linux v6.0 (including touchscreen, rotation, fing
 
 - S3 sleep unsupported
   - S0ix supported, reaches S0i2.0
+- consumed ~4.7% battery in ~12 hours
 
 ## NVIDIA
 
