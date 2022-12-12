@@ -38,7 +38,7 @@ Everything works of the box in Linux v6.0 (including touchscreen, rotation, fing
 - _can_ set custom charge limit
 - can’t disable dGPU
 - partial Linux support via `libsmbios`
-- NVMe RAID mode set by default for all modern Dells regardless of by number of m2 slots
+- NVMe RAID mode set by default for all modern Dells regardless of number of M.2 slots
   - [Intel Rapid Storage Technology](https://en.m.wikipedia.org/wiki/Intel_Rapid_Storage_Technology)
   - aka [FakeRAID](https://wiki.archlinux.org/title/RAID#Implementation)
   - requires `vmd` kernel module
