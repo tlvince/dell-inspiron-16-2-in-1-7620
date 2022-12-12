@@ -65,8 +65,6 @@ Everything works of the box in Linux v6.0 (including touchscreen, rotation, fing
   - [RTD3 configuration](<https://wiki.archlinux.org/title/PRIME#PCI-Express_Runtime_D3_(RTD3)_Power_Management>)
 - CUDA supported
 
-## GPU Power Benchmarks
-
 Test environment:
 
 - idle
