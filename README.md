@@ -8,10 +8,10 @@ Everything works of the box in Linux v6.0 (including touchscreen, rotation, fing
 
 - [Intel i7-1260P](https://ark.intel.com/content/www/us/en/ark/products/226254/intel-core-i71260p-processor-18m-cache-up-to-4-70-ghz.html) (Alder Lake)
 - NVIDIA MX550 (Turing)
-- Samsung PM991a SSD
+- Samsung PM991a M.2 2230 SSD (supports M.2 2280 PCIe Gen4)
 - Samsung SDC4164 4k OLED 3840x2400 400 nits 283ppi
 - 87Wh battery
-- 2x SODIMM
+- 2x SODIMM (supports up to 64GB, DDR4)
 - 1x M.2 NVMe
 - HDMI 1.4 only
 - [Hardware for Linux probe](https://linux-hardware.org/?probe=3e34521c45)
@@ -178,3 +178,5 @@ Comparing GNOME and sway with roughly equivalent helpers to provide a basic "des
   - [lakotamm /r/dell discussion](https://old.reddit.com/r/Dell/comments/w30svq/freshly_new_inspiron_16_plus_7620_with_i7_and_rtx/)
 - [lhl/linuxlaptops - Framework Laptop](https://github.com/lhl/linuxlaptops/wiki/2022-Framework-Laptop-DIY-Edition-12th-Gen-Intel-Batch-1)
 - [Dell Inspiron 16 2-in-1 (7620) - ArchWiki](https://wiki.archlinux.org/title/Dell_Inspiron_16_2-in-1_(7620))
+- [Service Manual](https://dl.dell.com/content/manual16923540-inspiron-16-7620-2-in-1-service-manual.pdf)
+- [Setup and Specifications](https://dl.dell.com/content/manual17399228-inspiron-16-7620-2-in-1-setup-and-specifications.pdf)
