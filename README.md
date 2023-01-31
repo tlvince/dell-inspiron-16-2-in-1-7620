@@ -8,11 +8,10 @@ Everything works of the box in Linux v6.0 (including touchscreen, rotation, fing
 
 - [Intel i7-1260P](https://ark.intel.com/content/www/us/en/ark/products/226254/intel-core-i71260p-processor-18m-cache-up-to-4-70-ghz.html) (Alder Lake)
 - NVIDIA MX550 (Turing)
-- Samsung PM991a M.2 2230 SSD (supports M.2 2280 PCIe Gen4)
+- Samsung PM991a M.2 2230 SSD (1x M.2 slot, supports M.2 2280 PCIe Gen4)
 - Samsung SDC4164 4k OLED 3840x2400 400 nits 283ppi
 - 87Wh battery
 - 2x SODIMM (supports up to 64GB, DDR4)
-- 1x M.2 NVMe
 - HDMI 1.4 only
 - [Hardware for Linux probe](https://linux-hardware.org/?probe=3e34521c45)
 
@@ -24,7 +23,7 @@ Everything works of the box in Linux v6.0 (including touchscreen, rotation, fing
 - portability and tablet mode hampered by the size and weight
 - touchpad mylar layer prevents capacitive grounding "vibration"
 - both USB C ports are on the same side - minor annoyance depending on desk set up
-- no stylus included (shame)
+- no stylus included (in most markets)
 - anecdotally quieter fan than Framework
 - excellent OLED display with 283ppi - [ideal for HiDPI](https://github.com/cassidyjames/dippi/blob/0703424c3d541f581bd83d519da365cfd8566dda/dpi.md), running at 2x (integer) scaling
   - unfortunately this unit has grey uniformity issues
