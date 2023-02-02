@@ -181,3 +181,4 @@ Comparing GNOME and sway with roughly equivalent helpers to provide a basic "des
 - [Setup and Specifications](https://dl.dell.com/content/manual17399228-inspiron-16-7620-2-in-1-setup-and-specifications.pdf)
 - [Dell Forums](https://www.dell.com/community/forums/searchpage/tab/message?filter=location&q=7620&location=forum-board:Inspiron&sort_by=-topicPostDate)
 - [BIOS update](https://www.dell.com/support/home/en-uk/drivers/driversdetails?driverid=nmxgd&oscode=biosa&productcode=inspiron-16-7620-2-in-1-laptop)
+- [r/Dell](https://old.reddit.com/r/Dell/search?q=title%3A7620+NOT+title%3Ag16+NOT+title%3Avostro&restrict_sr=on&sort=new&t=all)
