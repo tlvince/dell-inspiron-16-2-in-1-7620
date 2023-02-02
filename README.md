@@ -1,6 +1,6 @@
-# Inspiron 16 2-in-1 7620
+# Inspiron 16 2-in-1 (7620)
 
-Device notes and configuration under Linux for the [Inspiron 16 2-in-1 7620](https://www.dell.com/en-uk/shop/laptops/inspiron-16-2-in-1-laptop/spd/inspiron-16-7620-2-in-1-laptop/cn76201sc) 4K OLED variant.
+Device notes and configuration under Linux for the [Inspiron 16 2-in-1 (7620)](https://www.dell.com/en-uk/shop/laptops/inspiron-16-2-in-1-laptop/spd/inspiron-16-7620-2-in-1-laptop/cn76201sc) 4K OLED variant.
 
 Everything works of the box in Linux v6.0 (including touchscreen, rotation, fingerprint scanner, SD-card reader), with the exception of the front firing speakers (a [patch](https://github.com/tiwai/sound/commit/2912cdda734d9136615ed05636d9fcbca2a7a3c5) has been merged and is expected to ship in v6.2).
 
@@ -179,3 +179,5 @@ Comparing GNOME and sway with roughly equivalent helpers to provide a basic "des
 - [Dell Inspiron 16 2-in-1 (7620) - ArchWiki](https://wiki.archlinux.org/title/Dell_Inspiron_16_2-in-1_(7620))
 - [Service Manual](https://dl.dell.com/content/manual16923540-inspiron-16-7620-2-in-1-service-manual.pdf)
 - [Setup and Specifications](https://dl.dell.com/content/manual17399228-inspiron-16-7620-2-in-1-setup-and-specifications.pdf)
+- [Dell Forums](https://www.dell.com/community/forums/searchpage/tab/message?filter=location&q=7620&location=forum-board:Inspiron&sort_by=-topicPostDate)
+- [BIOS update](https://www.dell.com/support/home/en-uk/drivers/driversdetails?driverid=nmxgd&oscode=biosa&productcode=inspiron-16-7620-2-in-1-laptop)
