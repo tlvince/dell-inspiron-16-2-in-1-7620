@@ -2,7 +2,7 @@
 
 Device notes and configuration under Linux for the [Inspiron 16 2-in-1 (7620)](https://www.dell.com/en-uk/shop/laptops/inspiron-16-2-in-1-laptop/spd/inspiron-16-7620-2-in-1-laptop/cn76201sc) 4K OLED variant.
 
-Everything works of the box in Linux v6.0 (including touchscreen, rotation, fingerprint scanner, SD-card reader), with the exception of the front firing speakers (a [patch](https://github.com/tiwai/sound/commit/2912cdda734d9136615ed05636d9fcbca2a7a3c5) has been merged and is expected to ship in v6.2).
+Everything works of the box in Linux v6.0 (including touchscreen, rotation, fingerprint scanner, SD-card reader, both top and bottom firing speakers).
 
 ## Specs
 
