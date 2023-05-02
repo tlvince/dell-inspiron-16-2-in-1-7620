@@ -51,8 +51,6 @@ Everything works of the box in Linux v6.0 (including touchscreen, rotation, fing
 
 - audio requires `sof-firmware`
 - [getUserMedia / getDisplayMedia Test Page](https://mozilla.github.io/webrtc-landing/gum_test.html) - useful for testing webcam/screensharing
-- av1 decoding broken in [Firefox v107](https://bugzilla.mozilla.org/show_bug.cgi?id=1793507)
-  - fixed in v108, workaround: `media.ffvpx.enabled: false`
 
 ## Sleep
 
