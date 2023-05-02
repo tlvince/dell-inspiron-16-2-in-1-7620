@@ -37,6 +37,8 @@ Everything works of the box in Linux v6.0 (including touchscreen, rotation, fing
 - _can_ set custom charge limit
 - can’t disable dGPU
 - partial Linux support via `libsmbios`
+  - `smbios-battery-ctl --get-charging-cfg`
+  - `smbios-thermal-ctl --get-thermal-info`
 - NVMe RAID mode set by default for all modern Dells regardless of number of M.2 slots
   - [Intel Rapid Storage Technology](https://en.m.wikipedia.org/wiki/Intel_Rapid_Storage_Technology)
   - aka [FakeRAID](https://wiki.archlinux.org/title/RAID#Implementation)
@@ -170,6 +172,23 @@ Comparing GNOME and sway with roughly equivalent helpers to provide a basic "des
 | sleep 1    | 99.56% | 5.48      |
 | sleep 0.1  | 98.64% | 6.51      |
 | sleep 0.01 | 90.6%  | 9.36      |
+
+## CPU Benchmarks
+
+Test environment
+
+- Linux 6.1.9
+- Geekbench 5.5
+- Thermal mode: performance
+- TLP: AC
+- thermald: 2.5.2
+
+BIOS  | Single core | Multi core | Governer    | thermald  | Run
+----  | ----------- | ---------- | --------    | --------- | ---
+1.8.0 | 1753        | 7897       | powersave   | adaptive  | https://browser.geekbench.com/v5/cpu/20246870
+1.8.0 | 1742        | 7897       | performance | adaptive  | https://browser.geekbench.com/v5/cpu/20247395
+1.9.0 | 1736        | 7961       | powersave   | adaptive  | https://browser.geekbench.com/v5/cpu/20247880
+1.9.0 | 1750        | 7885       | performance | adaptive  | https://browser.geekbench.com/v5/cpu/20247785
 
 ## Links
 
